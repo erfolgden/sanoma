@@ -1,0 +1,2 @@
+# sanoma
+Automation test
