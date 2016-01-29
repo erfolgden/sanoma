@@ -11,6 +11,7 @@ def setup(request):
     core.config.driver.verificationErrors = []
     core.config.driver.accept_next_alert = True
     core.config.driver.maximize_window()
+    core.config.driver.get(core.config.base_url)
 
     def teardown():
         core.config.driver.quit()
