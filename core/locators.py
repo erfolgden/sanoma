@@ -1,5 +1,6 @@
 # UI Elements should be located on this page
 
+
 class HomePageLocators(object):
     """A class for Home page locators. All Home page locators should come here"""
     Title = "Sanoma - Home"

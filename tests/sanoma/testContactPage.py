@@ -1,6 +1,6 @@
 
-from base_test import *
-from pages.home_page import Homepage
+from tests.base_test import *
+from pages.sanoma.home_page import Homepage
 
 
 class TestContentPage(BaseTest):
@@ -9,7 +9,7 @@ class TestContentPage(BaseTest):
     # Contact page is opened and title = "Sanoma"
     # When I open home_page and click content menu item "nav-main-contact"
     # then contact page will opened and title = "Sanoma"
-    def test_Contact_Page(self):
+    def test_contact_page(self):
         homepage = Homepage(core.config.driver)
         homepage.navigate()
         contact_page = homepage.click_content_menu_item()

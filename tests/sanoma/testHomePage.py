@@ -1,6 +1,5 @@
-from base_test import *
-from core import locators
-from pages.home_page import Homepage
+from tests.base_test import *
+from pages.sanoma.home_page import Homepage
 
 
 class TestHomePage(BaseTest):

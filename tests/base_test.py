@@ -4,6 +4,7 @@ import core.config
 
 """Base class to initialize the base test class and driver"""
 
+
 @pytest.fixture(scope='class')
 def setup(request):
     core.config.driver = webdriver.Firefox()
@@ -11,7 +12,6 @@ def setup(request):
     core.config.driver.verificationErrors = []
     core.config.driver.accept_next_alert = True
     core.config.driver.maximize_window()
-    core.config.driver.get(core.config.base_url)
 
     def teardown():
         core.config.driver.quit()

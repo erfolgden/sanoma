@@ -1,6 +1,6 @@
 from core import locators
-from pages.contact_page import ContactPage
 from pages.page import Page
+from pages.sanoma.contact_page import ContactPage
 
 
 class Homepage(Page):
