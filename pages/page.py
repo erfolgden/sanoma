@@ -3,20 +3,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.command import Command
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located
-from core.config import timeout_seconds
 from selenium.webdriver.support import expected_conditions
 
-
+# fixme: should be deprecated or re-written
 class Page(object):
     """Base class to initialize the base page that will be called from all pages"""
 
-    _url = None
+    URL = None
 
     def __init__(self, driver):
+        print('Page init')
         self.driver = driver
 
     def navigate(self):
-        self.driver.get(self._url)
+        self.driver.get(self.URL)
 
     def is_element_visible(self, locator):
         """Verifies that the element is visible
@@ -62,7 +62,8 @@ class Page(object):
     def is_element_present(self, locator):
         try:
             element = self.find_element_by_locator(locator)
-            return True
+            if element:
+                return True
         except NoSuchElementException:
             return False
 

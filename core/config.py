@@ -1,3 +1,9 @@
-driver = None
-base_url = "http://sanoma.nl"
-timeout_seconds = 10
+"""
+   production url list of sites
+
+"""
+SANOMA_URL = "http://sanoma.nl"
+MARGRIET_URL = "http://www.margriet.nl/"
+LIBELLE_URL = "http://www.libelle.nl/"
+
+UI_MAX_RESPONSE_TIME = 25.0

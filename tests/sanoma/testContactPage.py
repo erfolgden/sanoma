@@ -1,5 +1,5 @@
 
-from tests.base_test import *
+from tests.BaseTest import *
 from pages.sanoma.home_page import Homepage
 
 
