@@ -4,19 +4,36 @@ from selenium.webdriver.remote.command import Command
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.expected_conditions import visibility_of_element_located
 from selenium.webdriver.support import expected_conditions
+import selenium.common
+from selenium.webdriver.support.ui import WebDriverWait
+from core.config import UI_MAX_RESPONSE_TIME
+
 
 # fixme: should be deprecated or re-written
+
+
 class Page(object):
-    """Base class to initialize the base page that will be called from all pages"""
+
+    """
+
+    Base class to initialize the base page that will be called from all pages
+
+    """
 
     URL = None
 
     def __init__(self, driver):
-        print('Page init')
-        self.driver = driver
+        self.driver = driver.instance
 
     def navigate(self):
         self.driver.get(self.URL)
+
+    def wait(self):
+        return WebDriverWait(
+            self.driver,
+            UI_MAX_RESPONSE_TIME,
+            ignored_exceptions=selenium.common.exceptions.WebDriverException
+            )
 
     def is_element_visible(self, locator):
         """Verifies that the element is visible

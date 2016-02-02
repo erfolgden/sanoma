@@ -8,7 +8,7 @@ locators = {
         'xpath=//*[@id="gigya-login-screen"]//input[@class="gigya-input-password gigya-error-display"]'}
 
 
-class GigyaLoginScreen(Page):
+class LoginScreen(Page):
     _url = ""
 
     def is_email_field_present(self):
