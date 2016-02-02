@@ -1,2 +1,2 @@
 # sanoma
-Automation test
+This is an opinionated automation framework for use Pytest and WebDriver libraries.
