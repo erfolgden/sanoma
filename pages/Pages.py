@@ -1,4 +1,5 @@
 from pages.BasePage import BasePage
+from pages.libelle.home_page.homePageLibelleWrapper import LibelleHomePageWrapper
 from pages.magriet.home_page.homePageWrapper import HomePageWrapper
 
 
@@ -20,3 +21,6 @@ class PageWrappers(Pages):
 
     def select_login_page(self):
         pass
+
+    def select_libelle_home_page(self):
+        return LibelleHomePageWrapper(self.driver)
