@@ -9,6 +9,7 @@ SA_LOGIN_BUTTON = 'id=SA_login_button'
 CONTAINER_SOCIAL = 'SA_screenset_container_social_0'
 CONTAINER_SOCIAL_ID = 'id=SA_screenset_container_social_0'
 PAGE_TITLE = 'Margriet | Alles over gezond en lekker leven'
+CSS_ELEMENTS_TEST = 'css=.img-container>img'
 
 class HomePageWrapper(Page):
     """
