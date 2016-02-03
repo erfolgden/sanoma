@@ -2,28 +2,29 @@ from core.config import *
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 
-from pages.page import Page
-from pages.magriet.login_page import login_screen
+from pages.BasePage import BasePage
 
 
-class HomePageWrapper(Page):
+class HomePageWrapper(BasePage):
     """
-    http://www.libelle.nl homepage
+    http://www.margriet.nl/ homepage
 
     """
 
     SA_LOGIN_BUTTON = 'id=SA_login_button'
     PAGE_TITLE = 'Margriet | Alles over gezond en lekker leven'
+    BAR_MENU_XPATH = 'menu-primary-menu'
+    HOME = 'menu-item-37198'
+
+    def open_margriet(self):
+        self.driver.get(MARGRIET_URL)
+        return self.driver.current_url
 
     def get_site_logo(self):
-        self.driver.get(MARGRIET_URL)
-        return self._site_logo()
-
-    def open_login_page(self):
-        button = self.wait().until(ec.visibility_of_element_located((By.ID, "SA_login_button")),
-                                   message="Unable to find login button")
-        if button:
-            button.click()
-
-    def _site_logo(self):
         return self.driver.find_element_by_id("site-logo").get_attribute("text")
+
+    def get_bar_links(self):
+        return filter(bool, [i.text for i in self.driver.find_elements_by_xpath(HomePageWrapper.BAR_MENU_XPATH)])
+
+    def get_home_links(self):
+        return [i.text for i in self.driver.find_elements_by_xpath("//ul[@id='menu-primary-menu']/li")]

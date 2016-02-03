@@ -9,10 +9,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from core.config import UI_MAX_RESPONSE_TIME
 
 
-# fixme: should be deprecated or re-written
+# fixme: should be re-factored
 
 
-class Page(object):
+class BasePage(object):
 
     """
 
@@ -24,12 +24,7 @@ class Page(object):
 
     def __init__(self, driver):
         self.driver = driver.instance
-
-    def navigate(self):
-        self.driver.get(self.URL)
-
-    def wait(self):
-        return WebDriverWait(
+        self.wait = WebDriverWait(
             self.driver,
             UI_MAX_RESPONSE_TIME,
             ignored_exceptions=selenium.common.exceptions.WebDriverException
