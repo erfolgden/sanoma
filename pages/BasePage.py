@@ -47,7 +47,7 @@ class BasePage(object):
              'css': 'self.driver.find_elements_by_css(locator_value)'
              }
         try:
-            self.wait().until(lambda driver: d.get(locator_type))
+            self.wait.until(lambda driver: d.get(locator_type))
             element_value = d.get(locator_type)
         except NoSuchElementException:
             raise Exception('Invalid locator')
