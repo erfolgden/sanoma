@@ -47,17 +47,17 @@ class Page(object):
 
     # Find element by locator. you can use locator's: class, xpath, id, name
     def find_element_by_locator(self, locator):
-        locator_type = locator[:locator.find("=")], locator_value = locator[locator.find("=") + 1:]
-        if locator_type == 'class':
-            return self.driver.find_element_by_class(locator_value)
-        elif locator_type == 'xpath':
-            return self.driver.find_element_by_xpath(locator_value)
-        elif locator_type == 'id':
-            return self.driver.find_element_by_id(locator_value)
-        elif locator_type == 'name':
-            return self.driver.find_element_by_class_name(locator_value)
-        else:
+        locator_type, locator_value = locator.split('=')
+        d = {'id': self.driver.find_element_by_id(locator_value),
+             'xpath': self.driver.find_elements_by_xpath(locator_value),
+             'class': self.driver.find_elements_by_class_name(locator_value),
+             'name': self.driver.find_elements_by_name(locator_value)}
+        try:
+            self.wait().until(lambda driver: d.get(locator_type))
+            element_value = d.get(locator_type)
+        except NoSuchElementException:
             raise Exception('Invalid locator')
+        return element_value
 
         # Find element by locator. you can use locator's: class, xpath, id, name
     def find_elements_by_locator(self, locator):
@@ -101,4 +101,3 @@ class Page(object):
             self.find_element_by_locator(locator).click()
         except NoSuchElementException:
             return False
-
