@@ -11,6 +11,7 @@ class DriverManager(object):
     def start(self, type='ff'):
         # implement logic to create instance depends on condition
         self._instance = webdriver.Firefox()
+        self._instance.maximize_window()
         return self._instance
 
     @property

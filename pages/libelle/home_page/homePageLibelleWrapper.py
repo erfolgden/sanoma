@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import wait
 
 from core.config import LIBELLE_URL
@@ -10,7 +11,7 @@ class LibelleHomePageWrapper(BasePage):
 
     """
 
-    SA_LOGIN_BUTTON = 'id=SA_login_button'
+    SA_LOGIN_BUTTON = 'SA_login_button'
     PAGE_TITLE = "Libelle Daily - Dagelijks het laatste nieuws dat informeert, inspireert en vermaakt"
 
     def open_libelle(self):
