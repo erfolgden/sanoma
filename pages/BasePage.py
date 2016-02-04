@@ -30,42 +30,31 @@ class BasePage(object):
             ignored_exceptions=selenium.common.exceptions.WebDriverException
             )
 
-    def is_element_visible(self, locator):
-        """Verifies that the element is visible
+    def is_element_present(self, locator):
+        """Verifies that the element is present
         :param locator:
         """
-        return WebDriverWait(self.driver, 5).until(lambda driver: True if self.is_element_present(locator) else False)
+        return WebDriverWait(self.driver, 5).until(
+            lambda driver: True if self.find_element_by_locator(locator) else False)
 
-
-    # Find element by locator. you can use locator's: class, xpath, id, name
     def find_element_by_locator(self, locator):
+        """Find element by locator. You can use locator's: class, xpath, id, name
+        :param locator:
+        """
         locator_type, locator_value = locator.split('=')
-        d = {'id': 'self.driver.find_element_by_id(locator_value)',
-             'xpath': 'self.driver.find_element_by_xpath(locator_value)',
-             'class': 'self.driver.find_element_by_class_name(locator_value)',
-             'name': 'self.driver.find_element_by_name(locator_value)',
-             'css': 'self.driver.find_elements_by_css(locator_value)'
+        d = {'id': self.driver.find_element_by_id(locator_value),
+             'xpath': self.driver.find_element_by_xpath(locator_value),
+             'class': self.driver.find_element_by_class_name(locator_value),
+             'name': self.driver.find_element_by_name(locator_value),
+             'css': self.driver.find_elements_by_css(locator_value)
              }
-        try:
-            self.wait.until(lambda driver: d.get(locator_type))
-            element_value = d.get(locator_type)
-        except NoSuchElementException:
-            raise Exception('Invalid locator')
-        return element_value
+        return self.wait.until(lambda driver: d.get(locator_type))
 
-
-    # Is Element is present or not
-    def is_element_present(self, locator):
-        try:
-            element = self.find_element_by_locator(locator)
-            if element:
-                return True
-        except NoSuchElementException:
-            return False
-
-    # Element is visible or not
     def is_visible(self, locator):
-        return self.find_element_by_locator(locator).is_displayed()
+        """Find element by locator. You can use locator's: class, xpath, id, name
+        :param locator:
+        """
+        return lambda driver: True if self.find_element_by_locator(locator).is_displayed() else False
 
     # Check is element available or not
     def is_element_available(self, locator):
@@ -80,3 +69,6 @@ class BasePage(object):
             self.find_element_by_locator(locator).click()
         except NoSuchElementException:
             return False
+
+    def get_page_title(self):
+        return self.driver.title
