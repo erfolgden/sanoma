@@ -8,9 +8,13 @@ class DriverManager(object):
     def __init__(self):
         self._instance = None
 
-    def start(self, type='ff'):
+    def start(self, type='firefox'):
         # implement logic to create instance depends on condition
-        self._instance = webdriver.Firefox()
+        if type == 'firefox':
+            self._instance = webdriver.Firefox()
+        else:
+            pass
+            # self._instance = webdriver.Chrome("path//to//webdriver")
         self._instance.maximize_window()
         return self._instance
 
