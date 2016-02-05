@@ -2,14 +2,32 @@ from core.config import LIBELLE_URL
 from pages.Pages import Pages
 from tests.BaseTest import BaseTest
 
+"""
+Test Scenario:
+----------
+1. Open url="http://www.margriet.nl/"
+2. Check site url's and title's
+3. Open login page and check that e-mail and password fields present on the page
 
+Test Environment:
+----------
+- Selenium 2.50.1
+- Firefox 42.0
+
+Expected Result:
+----------------
+All element should be present on the page
+
+[FAIL]
+ -  elements are not visible
+"""
 class TestLoginFunctionality(BaseTest):
 
 
     def test_HomePage(self, driver):
         """
         Check Home page url's and title's
-        :param driver:
+        :param driver:instance of selenium driver
         :return:
         """
         pages = Pages(driver)
