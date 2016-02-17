@@ -62,6 +62,8 @@ def pytest_addoption(parser):
     parser.addoption("--browser", default='',
                      type='choice', choices=sorted(browsers),
                      help="runs tests only for given browser")
+    parser.addoption("--url", default='',
+                     help="runs tests with specific url address")
 
 
 @pytest.yield_fixture(scope="module", params=browsers.keys())
@@ -82,6 +84,16 @@ def browser(request):
         pytest.skip('browser {} selected in the command line'.format(selected))
     driver = browsers[request.param]
     yield driver
+
+
+@pytest.yield_fixture(scope="module")
+def url(request):
+    """
+    url as param can pass via tests
+
+    """
+
+    yield request.config.getoption("url")
 
 
 @pytest.fixture(scope="module")

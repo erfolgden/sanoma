@@ -60,6 +60,27 @@ class HomePageWrapper(BasePage):
         items = html.find_elements_by_tag_name("li")
         return filter(bool, [i.text for i in items])
 
+    def login_screen(self):
+        html = self.wait.until(
+            ec.visibility_of_element_located((By.ID, "SA_login_button")))
+        html.click()
+
+    def registration_screen(self):
+        a_href = self.wait.until(ec.presence_of_all_elements_located((By.XPATH,
+                                                                      "//div[@class='navigation-register active']//a")))
+
+        a_href[-1].click()
+
+    def click_agreement(self):
+        # fixme: add in case of selection all checkbox agreements
+        #var t =  document.querySelectorAll('.gigya-input-checkbox')
+        # var l = t.length
+        # for (var i = 9; i < l; i++) {
+        #     alert(myStringArray[i]);
+        #     t[i].click();
+        # }
+        self.driver.execute_script("document.getElementById('data.terms').click()")
+
     def get_login_links_text(self):
         html = self.wait.until(
             ec.visibility_of_element_located((By.XPATH, cfg.LOGIN_LIST_XPATH)))

@@ -44,7 +44,9 @@ class TestHomePage(BaseTest):
     LOGGIN_SUB_TAB = [u'INLOGGEN', u'REGISTREREN']
     BOTTOM_BAR = [u'ADVERTEREN', u'OVER ONS', u'CONTACT', u'DISCLAIMER', u'PRIVACY- EN COOKIEBELEID', u'COPYRIGHT']
 
+    home_page = None
     def test_HomePage(self, driver):
+        global home_page
         pages = Pages(driver)
         home_page = pages.navigateTo().select_home_page()
         open_page = home_page.open_margriet()
@@ -73,4 +75,9 @@ class TestHomePage(BaseTest):
             "Login button is not clickable"
         assert home_page.get_bottom_bar() == TestHomePage.BOTTOM_BAR, \
             'Incorrect bottom bar elements text or order'
+
+    def test_Registration(self):
+        home_page.login_screen()
+        home_page.registration_screen()
+        home_page.click_agreement()
 
