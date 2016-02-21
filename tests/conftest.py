@@ -2,7 +2,7 @@ import pytest
 
 from selenium import webdriver
 from core.config import DESIRED_CAP, USERNAME, BROWSERSTACK_KEY
-desired_cap = {'browser': 'Firefox', 'browser_version': '43.0', 'os': 'Windows', 'os_version': '8.1', 'resolution': '1024x768'}
+desired_cap = {'browser': 'Firefox', 'browser_version': '43.0', 'os': 'Windows', 'os_version': '8.1', 'resolution': '1280x800', 'browserstack.debug':'true'}
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
 browsers = {"ff": 'firefox', 'ch': 'chrome', 'bs': 'browserstack'}
