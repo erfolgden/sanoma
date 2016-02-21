@@ -4,7 +4,8 @@
 """
 SANOMA_URL = "http://sanoma.nl"
 MARGRIET_URL = "http://www.margriet.nl/"
-LIBELLE_URL = "http://www.libelle.nl/"
+#LIBELLE_URL = "http://www.libelle.nl/"
+LIBELLE_URL = "https://gatekeeper.staging.sanomaservices.nl/preview/whitelabel/?selected_key=preview&selected_bucket=staging"
 
 # delay for wait until function
 UI_MAX_RESPONSE_TIME = 25.0
