@@ -13,7 +13,7 @@ class DriverManager(object):
     def __init__(self):
         self._instance = None
 
-    def start(self, type='firefox'):
+    def start(self, type='browserstack'):
 
         """
         Webdriver instantiation method
@@ -29,7 +29,6 @@ class DriverManager(object):
         if type == 'chrome':
             # fixme: path to browser is hardcoded now. Need to instatiate browser somewhere in discussed place and get him from ENV
             self._instance = webdriver.Chrome("D:\\Install\\chromedriver_win32\\chromedriver.exe")
-        self._instance.maximize_window()
         if type == 'browserstack':
             # implement logic to connect with browserstack
             if not (USERNAME and BROWSERSTACK_KEY):
