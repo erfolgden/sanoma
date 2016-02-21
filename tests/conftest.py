@@ -5,7 +5,7 @@ from core.config import DESIRED_CAP, USERNAME, BROWSERSTACK_KEY
 desired_cap = {'browser': 'IE', 'browser_version': '11.0', 'os': 'Windows', 'os_version': '8.1', 'resolution': '1024x768'}
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
-browsers = {"ff": 'firefox', 'ch': 'chrome'}
+browsers = {"ff": 'firefox', 'ch': 'chrome', 'bs': 'browserstack'}
 
 
 class DriverManager(object):
@@ -30,7 +30,7 @@ class DriverManager(object):
             # fixme: path to browser is hardcoded now. Need to instatiate browser somewhere in discussed place and get him from ENV
             self._instance = webdriver.Chrome("D:\\Install\\chromedriver_win32\\chromedriver.exe")
         self._instance.maximize_window()
-        if type == 'bs':
+        if type == 'browserstack':
             # implement logic to connect with browserstack
             if not (USERNAME and BROWSERSTACK_KEY):
                 raise Exception("Please provide your BrowserStack username and access key")
