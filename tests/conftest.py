@@ -2,7 +2,14 @@ import pytest
 
 from selenium import webdriver
 from core.config import DESIRED_CAP, USERNAME, BROWSERSTACK_KEY
-desired_cap = {'browser': 'Firefox', 'browser_version': '43.0', 'os': 'Windows', 'os_version': '8.1', 'resolution': '1920x1200', 'browserstack.debug':'true'}
+desired_cap = {'browser': 'Firefox',
+               'browser_version': '43.0',
+               'os': 'Windows',
+               'os_version': '8.1',
+               'resolution': '1920x1200',
+               'browserstack.debug': 'true',
+               'project': 'Sanoma Account Functional Tests'}
+
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
 browsers = {"ff": 'firefox', 'ch': 'chrome', 'bs': 'browserstack'}
