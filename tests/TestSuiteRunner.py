@@ -16,7 +16,7 @@ def main(argv):
                              "default is run all tests from dir \"tests\"")
     parser.add_argument("-browser", "--browser", default="",
                         help="specify browser type: Chrome = 'ch', Firefox = 'ff', "
-                             "browserstack = 'browserstack'")
+                             "browserstack = 'bs'")
 
     args = parser.parse_args()
     browser = args.browser
