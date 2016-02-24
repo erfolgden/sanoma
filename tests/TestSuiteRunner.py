@@ -28,10 +28,11 @@ def main(argv):
 
     args = parser.parse_args()
     browser = args.browser
+    html = args.html
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "")
     if browser:
         browser = "--browser=" + args.browser
-    if args.html:
+    if html:
         html = "--html=" + args.html
     if args.test_list:
         test_path = path + args.test_list
@@ -39,7 +40,9 @@ def main(argv):
         for i in test_list:
             if i.startswith("test") and not i.endswith(".pyc"):
                         os.system("py.test {} {} {}".format(
-                            browser, html, os.path.join(test_path, "") + i))
+                            browser,
+                            html,
+                            os.path.join(test_path, "") + i))
 
     if args.html:
         html_path = get_directory_files(path)
