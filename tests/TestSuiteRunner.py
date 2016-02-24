@@ -31,13 +31,16 @@ def main(argv):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "")
     if browser:
         browser = "--browser=" + args.browser
+    if args.html:
+        html = "--html=" + args.html
     if args.test_list:
         test_path = path + args.test_list
         test_list = get_directory_files(test_path)
         for i in test_list:
             if i.startswith("test") and not i.endswith(".pyc"):
-                        os.system("py.test {} {}".format(
-                            browser, os.path.join(test_path, "") + i))
+                        os.system("py.test {} {} {}".format(
+                            browser, html, os.path.join(test_path, "") + i))
+
     if args.html:
         html_path = get_directory_files(path)
         for i in html_path:
