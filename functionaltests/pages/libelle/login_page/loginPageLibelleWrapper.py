@@ -1,5 +1,5 @@
-from pages.BasePage import BasePage
-from pages.libelle.home_page.homePageLibelleWrapper import LibelleHomePageWrapper
+from functionaltests.pages.BasePage import BasePage
+from functionaltests.pages.libelle.home_page.homePageLibelleWrapper import LibelleHomePageWrapper
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 

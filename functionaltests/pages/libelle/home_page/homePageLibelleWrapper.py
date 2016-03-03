@@ -1,5 +1,5 @@
-from core.config import LIBELLE_URL
-from pages.BasePage import BasePage
+from functionaltests.core.config import LIBELLE_URL
+from functionaltests.pages.BasePage import BasePage
 
 
 class LibelleHomePageWrapper(BasePage):
