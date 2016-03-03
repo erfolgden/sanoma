@@ -1,5 +1,5 @@
-from tests.BaseTest import BaseTest
 from pages.Pages import Pages
+from tests.BaseTest import BaseTest
 
 """
 Test Step:

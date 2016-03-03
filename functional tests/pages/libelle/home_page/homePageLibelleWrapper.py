@@ -1,6 +1,3 @@
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import wait
-
 from core.config import LIBELLE_URL
 from pages.BasePage import BasePage
 

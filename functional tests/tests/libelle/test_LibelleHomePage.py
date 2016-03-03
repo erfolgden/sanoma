@@ -1,4 +1,3 @@
-from core.config import LIBELLE_URL
 from pages.Pages import Pages
 from tests.BaseTest import BaseTest
 

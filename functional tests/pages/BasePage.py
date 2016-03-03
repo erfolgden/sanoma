@@ -1,12 +1,7 @@
-from selenium.common.exceptions import WebDriverException, NoSuchElementException, InvalidSelectorException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.remote.command import Command
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.expected_conditions import visibility_of_element_located
-from selenium.webdriver.support import expected_conditions
 import selenium.common
-from selenium.webdriver.support.ui import WebDriverWait
 from core.config import UI_MAX_RESPONSE_TIME
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 # fixme: should be re-factored
