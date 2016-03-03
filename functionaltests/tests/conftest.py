@@ -1,6 +1,8 @@
 import pytest
-from core.config import USERNAME, BROWSERSTACK_KEY
 from selenium import webdriver
+
+from functionaltests.core.config import USERNAME, BROWSERSTACK_KEY
+
 desired_cap = {'browser': 'Firefox',
                'browser_version': '43.0',
                'os': 'Windows',
