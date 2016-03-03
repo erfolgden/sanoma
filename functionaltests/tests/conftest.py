@@ -13,7 +13,7 @@ desired_cap = {'browser': 'Firefox',
 
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
-browsers = {"ff": 'firefox', 'ch': 'chrome', 'bs': 'browserstack'}
+browsers = {'bs': 'browserstack'}
 
 
 class DriverManager(object):
