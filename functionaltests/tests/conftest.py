@@ -13,7 +13,7 @@ desired_cap = {'browser': 'Firefox',
 
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
-browsers = {'bs': 'browserstack'}
+browsers = {'ff': 'firefox'}
 
 
 class DriverManager(object):
@@ -21,7 +21,7 @@ class DriverManager(object):
     def __init__(self):
         self._instance = None
 
-    def start(self, type='browserstack'):
+    def start(self, type='firefox'):
 
         """
         Webdriver instantiation method
