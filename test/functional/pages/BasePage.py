@@ -1,5 +1,5 @@
 import selenium.common
-from functionaltests.core.config import UI_MAX_RESPONSE_TIME
+from ..core.config import UI_MAX_RESPONSE_TIME
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 

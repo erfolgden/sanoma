@@ -1,7 +1,7 @@
-from functionaltests.pages.BasePage import BasePage
-from functionaltests.pages.libelle.home_page.homePageLibelleWrapper import LibelleHomePageWrapper
-from functionaltests.pages.libelle.login_page.loginPageLibelleWrapper import LibelleLoginPageWrapper
-from functionaltests.pages.magriet.home_page.homePageWrapper import HomePageWrapper
+from ..pages.BasePage import BasePage
+from ..pages.libelle.home_page.homePageLibelleWrapper import LibelleHomePageWrapper
+from ..pages.libelle.login_page.loginPageLibelleWrapper import LibelleLoginPageWrapper
+from ..pages.magriet.home_page.homePageWrapper import HomePageWrapper
 
 
 class Pages(BasePage):

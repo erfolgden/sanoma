@@ -1,5 +1,5 @@
-from functionaltests.core.config import *
-from functionaltests.pages.BasePage import BasePage
+from ....core.config import *
+from ....pages.BasePage import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
