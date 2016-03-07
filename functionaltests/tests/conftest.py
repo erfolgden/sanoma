@@ -1,7 +1,8 @@
 import pytest
-
 from selenium import webdriver
-from core.config import DESIRED_CAP, USERNAME, BROWSERSTACK_KEY
+
+from functionaltests.core.config import USERNAME, BROWSERSTACK_KEY
+
 desired_cap = {'browser': 'Firefox',
                'browser_version': '43.0',
                'os': 'Windows',
@@ -12,7 +13,7 @@ desired_cap = {'browser': 'Firefox',
 
 url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
-browsers = {"ff": 'firefox', 'ch': 'chrome', 'bs': 'browserstack'}
+browsers = {'bs': 'browserstack'}
 
 
 class DriverManager(object):

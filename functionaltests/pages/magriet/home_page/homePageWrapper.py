@@ -1,9 +1,9 @@
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.common.by import By
+from functionaltests.core.config import *
+from functionaltests.pages.BasePage import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as ec
 
-from pages.BasePage import BasePage
-from core.config import *
 import cfg
 
 
@@ -24,7 +24,7 @@ class HomePageWrapper(BasePage):
     ORDER_SUB_MEER = (cfg.GRATIS_MET_KORTING, cfg.WINNEN, cfg.STUUR_EEN_KAARTJE,
                       cfg.STUUR_EEN_KAARTJE, cfg.SPELLETJES, cfg.MUSICAL_CLUB, cfg.ABONNEECADEAUS)
     ORDER_BOTTOM_BAR = (cfg.ADVERTEREN, cfg.OVER_ON, cfg.CONTACT, cfg.DISCLAIMER,
-                       cfg.PRIVACY_EN_COOKIEBELEID, cfg.COPYRIGHT)
+                        cfg.PRIVACY_EN_COOKIEBELEID, cfg.COPYRIGHT)
 
     def open_margriet(self):
         self.driver.get(MARGRIET_URL)

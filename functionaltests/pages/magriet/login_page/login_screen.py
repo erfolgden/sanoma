@@ -1,7 +1,6 @@
-from selenium.webdriver.support import expected_conditions as ec
-from selenium.webdriver.common.by import By
-
 from pages.BasePage import BasePage
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as ec
 
 locators = {
     'email_input_field':
