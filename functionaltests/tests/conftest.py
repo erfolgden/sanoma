@@ -21,20 +21,20 @@ class DriverManager(object):
     def __init__(self):
         self._instance = None
 
-    def start(self, type='browserstack'):
+    def start(self, browser_type='browserstack'):
 
         """
         Webdriver instantiation method
 
-        :param type: of selected browser via commandline,
+        :param browser_type: of selected browser via commandline,
             in case of None pass browser will be runned all browsers from browsers dictionary
         :return: webdriver instance
 
         """
 
-        if type == 'firefox':
+        if browser_type == 'firefox':
             self._instance = webdriver.Firefox()
-        if type == 'browserstack':
+        if browser_type == 'browserstack':
             if not (USERNAME and BROWSERSTACK_KEY):
                 raise Exception("Please provide your BrowserStack username and access key")
             else:
