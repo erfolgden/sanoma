@@ -9,6 +9,7 @@ class Pages(BasePage):
         super(Pages, self).__init__(driver)
         self.driver = driver
 
+    @property
     def navigateTo(self):
         return PageWrappers(self.driver)
 

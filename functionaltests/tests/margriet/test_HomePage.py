@@ -47,7 +47,7 @@ class TestHomePage(BaseTest):
     def test_HomePage(self, driver):
         global home_page
         pages = Pages(driver)
-        home_page = pages.navigateTo().select_home_page()
+        home_page = pages.navigateTo.select_home_page()
         open_page = home_page.open_margriet()
         assert open_page == 'http://www.margriet.nl/', 'Incorrect url-address'
         assert home_page.get_site_logo() == u'\n\t\t\t\t\tMargriet - Happy & Healthy\n\t\t\t\t', \

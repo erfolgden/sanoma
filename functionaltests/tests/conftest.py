@@ -11,9 +11,9 @@ desired_cap = {'browser': 'Firefox',
                'browserstack.debug': 'true',
                'project': 'Sanoma Account Functional Tests'}
 
-url= 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
+url = 'http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub'
 
-browsers = {'bs': 'browserstack'}
+browsers = {'bs': 'browserstack', "ff":"firefox"}
 
 
 class DriverManager(object):
@@ -34,17 +34,14 @@ class DriverManager(object):
 
         if type == 'firefox':
             self._instance = webdriver.Firefox()
-        if type == 'chrome':
-            # fixme: path to browser is hardcoded now. Need to instatiate browser somewhere in discussed place and get him from ENV
-            self._instance = webdriver.Chrome("D:\\Install\\chromedriver_win32\\chromedriver.exe")
         if type == 'browserstack':
-            # implement logic to connect with browserstack
             if not (USERNAME and BROWSERSTACK_KEY):
                 raise Exception("Please provide your BrowserStack username and access key")
             else:
-                self._instance = webdriver.Remote(command_executor='http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub',desired_capabilities=desired_cap)
-        # self._instance = webdriver.Chrome("path//to//webdriver")
-
+                self._instance = \
+                    webdriver.Remote(
+                        command_executor='http://den378:7Lh6qWZ5xQrYg8iveqmo@hub.browserstack.com:80/wd/hub',
+                        desired_capabilities=desired_cap)
         return self._instance
 
     @property
